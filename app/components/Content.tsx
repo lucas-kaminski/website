@@ -1,84 +1,69 @@
-import type React from "react"
-import { Github, Linkedin } from "lucide-react"
+import type React from "react";
+import { Github, Linkedin } from "lucide-react";
 
 interface ContentProps {
-  activeDomain: string
+  activeDomain: string;
 }
 
 const Content: React.FC<ContentProps> = ({ activeDomain }) => {
   const renderContent = () => {
-    let content
-    let pageName
+    let content;
+    let pageName;
 
     switch (activeDomain) {
       case "me":
         content = (
           <p className="text-gray-600 mb-8 leading-relaxed">
-            Curitibano, vegano e entusiasta do minimalismo. Apaixonado por café de especialidade, trilhas na natureza e
-            em busca constante de um estilo de vida mais consciente e sustentável. Acredito que menos é mais, tanto na
-            vida quanto no código.
+            Curitibano, vegano e entusiasta do minimalismo. Apaixonado por café
+            de especialidade, trilhas na natureza e em busca constante de um
+            estilo de vida mais consciente e sustentável. Acredito que menos é
+            mais, tanto na vida quanto no código.
           </p>
-        )
-        pageName = "pessoal"
-        break
+        );
+        pageName = "pessoal";
+        break;
       case "dev":
         content = (
           <p className="text-gray-600 mb-8 leading-relaxed">
-            Desenvolvedor backend, minimalista e entusiasta de código limpo. Apaixonado por criar soluções elegantes e
-            eficientes, sempre buscando a simplicidade tanto no código quanto no design.
+            Desenvolvedor backend, minimalista e entusiasta de código limpo.
+            Apaixonado por criar soluções elegantes e eficientes, sempre
+            buscando a simplicidade tanto no código quanto no design.
           </p>
-        )
-        pageName = "desenvolvedor"
-        break
+        );
+        pageName = "desenvolvedor";
+        break;
       case "com":
         content = (
           <p className="text-gray-600 mb-8 leading-relaxed">
-            Fundador da meu.software, uma empresa nascida em 2023 com a missão de desenvolver soluções digitais
-            elegantes e eficientes. Focada em criar produtos que combinam excelência técnica com simplicidade no design,
-            a meu.software reflete minha paixão por construir ferramentas que fazem a diferença.
+            Fundador da meu.software, uma empresa nascida em 2023 com a missão
+            de desenvolver soluções digitais elegantes e eficientes. Focada em
+            criar produtos que combinam excelência técnica com simplicidade no
+            design, a meu.software reflete minha paixão por construir
+            ferramentas que fazem a diferença.
           </p>
-        )
-        pageName = "profissional"
-        break
+        );
+        pageName = "profissional";
+        break;
     }
 
     return (
       <div className="max-w-2xl mx-auto px-4">
         <h1 className="text-3xl font-light mb-4">Lucas Kaminski</h1>
         {content}
-        <p className="text-gray-400 text-sm mt-8">Mais seções sobre minha vida {pageName} estão em desenvolvimento.</p>
+        <p className="text-gray-400 text-sm mt-8">
+          Mais seções sobre minha vida {pageName} estão em desenvolvimento.
+        </p>
       </div>
-    )
-  }
+    );
+  };
 
   return (
     <div className="flex-grow flex flex-col">
-      <div className="flex-grow flex items-center justify-center">{renderContent()}</div>
-      <footer className="w-full py-8 px-4">
-        <div className="max-w-2xl mx-auto flex justify-center gap-4">
-          <a
-            href="https://github.com/lucas-kaminski"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-black transition-colors duration-200"
-          >
-            <Github className="h-5 w-5" />
-            <span className="sr-only">GitHub</span>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/lucas-kaminski/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-black transition-colors duration-200"
-          >
-            <Linkedin className="h-5 w-5" />
-            <span className="sr-only">LinkedIn</span>
-          </a>
-        </div>
-      </footer>
+      <div className="flex-grow flex items-center justify-center">
+        {renderContent()}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Content
-
+export default Content;
